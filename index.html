@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Music</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <i class="bx bxs-chevron-left"></i>
+        <i class="bx bx-menu"></i>
+      </div>
+      <div class="song_img">
+        <img src="images/cookie.jpeg" alt="" />
+        <!-- <img src="images/chimchim.jpg" alt="">
+            <img src="images/coups.png" alt="">
+            <img src="images/jkay.jpeg" alt="">
+            <img src="images/v.jpg" alt="">
+            <img src="images/vvvvv.jpeg" alt=""> -->
+      </div>
+      <div class="info">
+        <p class="artist_name">Anshika Pathak</p>
+        <h3 class="song_name">Jaguaar</h3>
+      </div>
+
+      <audio id="song">
+        <source src="media/jaguaar.mp3" type="audio/mp3" />
+        <!-- <source  src="media/woofer.mp3" type="audio/mp3"> -->
+        <!-- <source  src="media/Awara shaam hai.mp3" type="audio/mp3"> -->
+        <!-- <source  src="media/haryanvi.mp3" type="audio/mp3"> -->
+        <!-- <source  src="media/laal pili ankhiya.mp3" type="audio/mp3"> -->
+      </audio>
+
+      <input type="range" value="0" id="progress" />
+
+      <div class="controls">
+        <div><i class="bx bxs-chevrons-left"></i></div>
+        <div onclick="playPause()" class="mainBtn">
+          <i class="bx bx-play" id="control_icon"></i>
+        </div>
+        <!-- <i class='bx bx-pause' ></i> -->
+        <i class="bx bxs-chevrons-right"></i>
+      </div>
+      <div class="song-list-panel">
+        <i class="bx bx-x close-btn"></i>
+        <h3>All Songs</h3>
+        <ul id="songList"></ul>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>

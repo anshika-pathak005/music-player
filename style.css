@@ -1,0 +1,227 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container {
+  position: relative;
+    padding: 1rem;
+    width: min(90vw, 400px);   
+    background-color: rgb(31, 30, 30);
+    border-radius: 10px;
+    box-shadow: 0 0 30px #1b1b1b;
+    overflow: hidden;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.nav i{
+
+    font-size: 25px;
+    text-shadow: 0 0 5px #fff;
+}
+
+.song_img{
+    /* background-color: rebeccapurple; */
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;   
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    
+}
+.song_img img{
+    width: clamp(200px,
+    90%, 350px);  
+    object-fit: cover;
+    max-width: 350px;
+    height: auto;
+}
+.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    margin: 30px 0;
+    color: white;
+    
+}
+.info p{
+    font-size: clamp(14px, 3vw, 16px);
+    margin-bottom: 10px;
+    text-align: center;
+}
+.info h3{
+    font-size: clamp(24px, 5vw, 30px);
+    font-weight: bold;
+}
+
+#progress{
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    background: rgb(73, 73, 73);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#progress::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background:rgb(67, 67, 67) ;
+    border: 3px solid white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #fff;
+}
+
+.controls{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.controls i{
+    color: rgb(35, 35, 35);
+    text-shadow: 0 0 5px #000;
+    font-size: clamp(16px, 4vw, 20px);
+    width: clamp(40px, 10vw, 45px);
+    height: clamp(40px, 10vw, 45px);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.controls i:hover{
+    background-color: rgb(221, 219, 219);
+}
+/* .controls i:nth-child(2){
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    cursor: pointer;
+} */
+
+.mainBtn{
+    /* background-color: red; */
+    width: clamp(60px, 18vw, 80px);
+    height: clamp(60px, 18vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #000000;
+}
+.mainBtn i{
+    width: 100%;
+    height: 100%;
+    font-size: clamp(30px, 8vw, 50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 400px) {
+    .controls {
+        gap: 0.5rem;
+    }
+    .nav i {
+        font-size: 20px;
+    }
+}
+
+.song-list-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    backdrop-filter: blur(20px);    
+    background: rgba(255, 255, 255, 0.05); 
+    border-left: 1px solid rgba(255,255,255,0.2); 
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    overflow-y: auto;
+}
+
+.song-list-panel::-webkit-scrollbar {
+    width: 2px; 
+}
+
+.song-list-panel::-webkit-scrollbar-thumb {
+    background-color: #666; 
+    border-radius: 3px;  
+}
+
+.song-list-panel::-webkit-scrollbar-thumb:hover {
+    background-color: #444;
+}
+
+.song-list-panel::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.song-list-panel.active {
+    transform: translateX(0);
+}
+
+.song-list-panel h3 {
+    font-size: 23px;
+    margin-top: 0;
+    color: white;
+}
+
+.song-list-panel ul {
+    list-style: none;
+    padding: 0;
+}
+
+.song-list-panel ul li {
+    color: #fff;
+    padding: 20px 10px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+}
+.song-list-panel ul li:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+}
+
+
+.song-list-panel .close-btn {
+    position: sticky;
+    top: 5px;
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+.song-list-panel .close-btn:hover {
+    color: #fff; 
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff; 
+    cursor: pointer;
+}
