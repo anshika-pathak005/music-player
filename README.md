@@ -28,11 +28,14 @@ While I used a tutorial for structural guidance, all code was written independen
 ## 📂 Project Structure
 
 ```
-
-├── index.html   # Main player structure
-├── style.css    # Player styling and responsive layout
-└── index2.js    # JS logic for playback, playlist, and controls
-
+music-player/ # Repository root
+│
+├── images/ # Folder containing cover/poster images
+├── media/ # Folder containing audio files (songs)
+├── README.md # Project documentation
+├── index.html # Main player layout (HTML structure)
+├── index.js # Core music player logic (JavaScript)
+└── style.css # Styling and responsive rules (CSS)
 ```
 
 ## 🚀 Installation / Usage
@@ -43,8 +46,8 @@ While I used a tutorial for structural guidance, all code was written independen
 4. Use the controls or open the playlist panel to select songs.  
 
 ## 📸 Screenshot
-
-
+<img width="1366" height="682" alt="image" src="https://github.com/user-attachments/assets/1d51b713-f0d0-492b-ac42-bdc21c02162c" />
+<img width="1366" height="676" alt="image" src="https://github.com/user-attachments/assets/f8c087a8-a4e6-467f-8008-a179a8280347" />
 
 ## 🧠 What I Learned
 
